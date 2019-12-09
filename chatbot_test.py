@@ -3,8 +3,13 @@ import telebot
 
 bot = telebot.TeleBot(os.environ['BOT_API_TOKEN'])
 
-@bot.message_handler(commands=['start', 'help'])
+@bot.message_handler(commands=['start'])
 
 def send_welcome(message):
-    bot.reply_to(message, u"Hello, welcome to this bot!")
+    bot.reply_to(message, u"Hi, I am Morchoo!")
+
+
+
 bot.polling()
+
+
