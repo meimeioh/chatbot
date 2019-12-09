@@ -1,0 +1,7 @@
+Waiting for suggestions...
+{u'confirmed': False, u'probability': 0.8998473358786987, u'confidence': 0.9712235898106656, u'plant': {u'url': u'http://davesgarden.com/guides/pf/go/431/', u'common_name': u'Snake Plant', u'name': u'Sansevieria trifasciata'}, u'similar_images': None, u'id': 3910911}
+Sansevieria trifasciata
+{u'confirmed': False, u'probability': 0.03737436673578377, u'confidence': 0.9712235898106656, u'plant': {u'url': u'http://en.wikipedia.org/wiki/Sansevieria', u'common_name': None, u'name': u'Sansevieria'}, u'similar_images': None, u'id': 3910912}
+Sansevieria
+{u'confirmed': False, u'probability': 0.011367035915526045, u'confidence': 0.9712235898106656, u'plant': {u'url': u'http://en.wikipedia.org/wiki/Gasteria', u'common_name': None, u'name': u'Gasteria'}, u'similar_images': None, u'id': 3910913}
+Gasteria
