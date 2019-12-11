@@ -30,7 +30,7 @@ Telegram::Bot::Client.run(token) do |bot|
     when Telegram::Bot::Types::Message
       kb = [
         Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Inspire me!', callback_data: 'quote'),
-        Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Joke of the day', callback_data: 'joke'),
+        Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Joke of the day', callback_data: 'joke')
       ]
       markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
       bot.api.send_message(chat_id: message.chat.id, text: "How can I help you #{message.from.first_name}?", reply_markup: markup)
