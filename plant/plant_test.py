@@ -17,12 +17,8 @@ def send_for_identification(file_names):
       files_encoded.append(base64.b64encode(file.read()).decode('ascii'))
 
   params = {
-    'latitude': 49.194161,
-    'longitude': 16.603017,
-    'week': 23,
     'images': files_encoded,
     'key': secret_access_key,
-    'parameters': ["crops_fast"]
   }
   # see the docs for more optinal atrributes; for example 'custom_id' allows you to work
   # with your own identifiers
