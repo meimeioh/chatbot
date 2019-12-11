@@ -18,6 +18,7 @@ end
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
+    puts message
     case message
     when Telegram::Bot::Types::CallbackQuery
       # Here you can handle your callbacks from inline buttons
@@ -36,7 +37,5 @@ Telegram::Bot::Client.run(token) do |bot|
     end
   end
 end
-
-
 
 
