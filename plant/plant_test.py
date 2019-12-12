@@ -2,13 +2,12 @@
  The purpose of this code is to show how to work with plant.id API.
  You'll find API documentation at https://plantid.docs.apiary.io and https://plant.id/api
 """
+
 import base64
 import requests
-import os
 from time import sleep
 
-secret_access_key = os.environ['PLANT_API_TOKEN']
-
+secret_access_key = ''
 
 def send_for_identification(file_names):
   files_encoded = []
@@ -17,8 +16,12 @@ def send_for_identification(file_names):
       files_encoded.append(base64.b64encode(file.read()).decode('ascii'))
 
   params = {
+    'latitude': 49.194161,
+    'longitude': 16.603017,
+    'week': 23,
     'images': files_encoded,
     'key': secret_access_key,
+    'parameters': ["crops_fast"]
   }
   # see the docs for more optinal atrributes; for example 'custom_id' allows you to work
   # with your own identifiers
@@ -40,6 +43,7 @@ def get_suggestions(request_id):
       "key": secret_access_key,
       "ids": [request_id]
   }
+
   headers = {
       'Content-Type': 'application/json'
   }
@@ -55,9 +59,8 @@ def get_suggestions(request_id):
       return resp[0]["suggestions"]
 
 # more photos of the same plant increases the accuracy
-request_id = send_for_identification(['plant.jpg'])
+request_id = send_for_identification(['./plant/plant.jpg'])
 
 # just listing the suggested plant names here (without the certainty values)
 for suggestion in get_suggestions(request_id):
-  print(suggestion)
   print(suggestion["plant"]["name"])
