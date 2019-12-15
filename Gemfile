@@ -6,13 +6,13 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-require 'telegram/bot'
-require 'dotenv/load'
-require 'down'
-require 'rest_client'
-require 'base64'
-require 'json'
-require 'pry-byebug'
-require 'httparty'
-require 'pry-byebug'
+gem 'telegram-bot-ruby'
+gem 'dotenv-rails'
+gem 'down'
+gem 'rest_client'
+gem 'base64'
+gem 'json'
+gem 'pry-byebug'
+gem 'httparty'
+gem 'pry-byebug'
 
