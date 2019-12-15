@@ -4,6 +4,8 @@ require 'down'
 require 'rest_client'
 require 'base64'
 require 'json'
+require 'pry-byebug'
+
 
 token = ENV['BOT_API_KEY']
 plant = ENV['PLANT_API_KEY']
@@ -59,6 +61,7 @@ Telegram::Bot::Client.run(token) do |bot|
         content_type: 'application/json'
       }
 
+
       upload = JSON.parse((RestClient.post 'https://api.plant.id/identify', params1, headers))
       puts upload['id']
 
@@ -73,6 +76,7 @@ Telegram::Bot::Client.run(token) do |bot|
         content_type: 'application/json'
       }
 
+      binding.pry
       suggestion = RestClient.post 'https://api.plant.id/check_identifications', params2, headers
 
       puts suggestion
