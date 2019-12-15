@@ -14,7 +14,7 @@ Today: #{response['hourly']['summary']}
 This week: #{response['daily']['summary']}"
 end
 
-puts get_weather(1.3521, 103.8198)
+# puts get_weather(1.3521, 103.8198)
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
