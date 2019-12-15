@@ -6,13 +6,9 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem 'telegram-bot-ruby'
 gem 'dotenv-rails'
 gem 'down'
-gem 'rest_client'
-gem 'base64'
+gem 'httparty'
 gem 'json'
 gem 'pry-byebug'
-gem 'httparty'
-gem 'pry-byebug'
-
+gem 'telegram-bot-ruby'
