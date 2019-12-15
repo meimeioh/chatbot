@@ -34,7 +34,7 @@ Telegram::Bot::Client.run(token) do |bot|
           Telegram::Bot::Types::InlineKeyboardButton.new(text: 'What\'s the weather today?', callback_data: 'weather')
         ]
         markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
-        bot.api.send_message(chat_id: message.chat.id, text: "How can I help you #{message.from.first_name}?", reply_markup: markup)
+        bot.api.send_message(chat_id: message.chat.id, text: "How can I help you today #{message.from.first_name}?", reply_markup: markup)
       end
     end
   end
