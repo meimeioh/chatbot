@@ -5,7 +5,7 @@ require 'dotenv/load'
 # methods from other files
 require_relative 'trivia'
 require_relative 'weather'
-token = ENV["BOT_API_KEY"]
+token = ENV['MORCHOO_API_KEY']
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
