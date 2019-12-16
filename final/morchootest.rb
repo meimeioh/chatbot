@@ -9,7 +9,6 @@ token = ENV['MORCHOO_API_KEY']
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
-    puts message
     case message
     when Telegram::Bot::Types::CallbackQuery
       # Here you can handle your callbacks from inline buttons
@@ -31,7 +30,7 @@ Telegram::Bot::Client.run(token) do |bot|
         kb = [
           Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Inspire me!', callback_data: 'quote'),
           Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Joke of the day', callback_data: 'joke'),
-          Telegram::Bot::Types::InlineKeyboardButton.new(text: 'What\'s the weather today?', callback_data: 'weather')
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: 'What\'s the weather like?', callback_data: 'weather')
         ]
         markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
         bot.api.send_message(chat_id: message.chat.id, text: "How can I help you today #{message.from.first_name}?", reply_markup: markup)

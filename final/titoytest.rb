@@ -2,7 +2,6 @@ require 'telegram/bot'
 require 'dotenv/load'
 require 'pry-byebug'
 
-
 require_relative 'plant'
 
 token = ENV['TITOY_API_KEY']
@@ -23,13 +22,8 @@ Telegram::Bot::Client.run(token) do |bot|
       uploaded = upload(tempfile.path)
       id = uploaded['id']
 
-      puts id
-
       suggestion = suggestion(id)
-      puts suggestion
-
       bot.api.send_message(chat_id: message.chat.id, text: suggestion)
-
     elsif !message.photo.nil?
       binding.pry
       file_path = bot.api.getFile(file_id: message.photo[2].file_id)['result']['file_path']
@@ -38,11 +32,7 @@ Telegram::Bot::Client.run(token) do |bot|
       uploaded = upload(tempfile.path)
       id = uploaded['id']
 
-      puts id
-
       suggestion = suggestion(id)
-      puts suggestion
-
       bot.api.send_message(chat_id: message.chat.id, text: suggestion)
     end
   end
